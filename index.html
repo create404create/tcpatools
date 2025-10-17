@@ -2,29 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TCPA Tools – Lookup</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TCPA Tools — USA Number Checker</title>
+  <link rel="icon" href="favicon.ico" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>📞 TCPA Tools</h1>
-    <p>Check Litigator, DNC, and TCPA Status by Phone Number</p>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">📞</div>
+        <div>
+          <h1>TCPA Tools</h1>
+          <small>USA Number Checker — Created by Ehtisham</small>
+        </div>
+      </div>
 
-    <div class="form">
-      <input id="numberInput" type="text" placeholder="Enter phone number (e.g. 15551234567)" />
-      <button id="checkBtn">Check</button>
-    </div>
+      <div class="controls">
+        <button id="darkToggle" title="Toggle dark/light">🌙</button>
+      </div>
+    </header>
 
-    <div class="loader" id="loader" style="display:none;"></div>
+    <main class="card">
+      <section class="search">
+        <label for="numberInput">Phone number (US):</label>
+        <div class="row">
+          <input id="numberInput" placeholder="+15551234567 or 15551234567" />
+          <button id="checkBtn">Check</button>
+        </div>
+        <div class="hint">Use E.164 or national format (US numbers). Non-US numbers may return "invalid".</div>
+      </section>
 
-    <div class="result" id="resultBox">
-      <h2>Result:</h2>
-      <pre id="result">No data yet</pre>
-    </div>
+      <section class="status">
+        <div id="loader" class="loader" hidden></div>
+        <div class="result-header">
+          <h2>Result</h2>
+          <div class="actions">
+            <button id="copyBtn" title="Copy result">Copy</button>
+            <button id="shareBtn" title="Share result">Share</button>
+            <button id="clearBtn" title="Clear result">Clear</button>
+          </div>
+        </div>
+        <pre id="result">No data yet</pre>
+      </section>
 
-    <footer>
-      <p>Created by <a href="skype:live:.cid.6a4827c093354752" target="_blank">Ehtisham</a></p>
+      <section class="recent" id="recentWrap">
+        <h3>Recent searches</h3>
+        <div id="recentList">— none —</div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <small>Hosted on GitHub Pages · Use responsibly · Do not embed private keys publicly for production</small>
     </footer>
   </div>
 
